@@ -1,0 +1,403 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thati Sesharao - Portfolio</title>
+    <meta name="description" content="Personal Portfolio">
+    <meta name="keywords" content="Portfolio, Web Developer, Data Analyst">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome for icons -->
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #f9f9f9; /* Light background */
+            color: #333; /* Main text color */
+        }
+
+        header {
+            background: url('https://www.snaketray.com/wp-content/uploads/2017/07/contact-section-bg.jpg') no-repeat center center; /* Replace with your image URL */
+            background-size: cover; /* Ensure it covers the header area */
+            color: #ffffff; /* Text color */
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black for contrast */
+            color: #ffffff; /* Text color */
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        nav ul li a:hover {
+            background-color: rgba(0, 0, 0, 0.7); /* Darker on hover */
+        }
+
+        nav ul li a i {
+            margin-right: 5px; /* Space between icon and text */
+        }
+
+        #hero {
+            background: url('https://png.pngtree.com/background/20230317/original/pngtree-beautiful-background-of-high-rise-buildings-picture-image_2148726.jpg') no-repeat center center/cover; /* Hero Background Image */
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+            text-align: center;
+            position: relative;
+            margin-top: 20px; /* Adjust margin to create spacing from the header */
+        }
+
+        #hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+            z-index: 1;
+        }
+
+        #hero h1 {
+            font-size: 3em;
+            position: relative;
+            z-index: 2;
+        }
+
+        #hero p {
+            font-size: 1.5em;
+            position: relative;
+            z-index: 2;
+        }
+
+        .social-links a {
+            color: #ffffff;
+            margin: 0 10px;
+            font-size: 1.5em;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #f39c12; /* Hover effect */
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        h2,
+        h3 {
+            color: #6a11cb; /* Section headers color */
+            margin: 20px 0;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        .about {
+            background: url('https://tse1.mm.bing.net/th?id=OIP.yD4dM_OyDc6Z8r4aDopnhQHaEI&pid=Api&P=0&h=180') no-repeat center center/cover; /* About Section Background Image */
+            color: white;
+            padding: 40px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            margin-top: 40px; /* Margin added for space above this section */
+            position: relative;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .content {
+            display: flex; /* Flex container */
+            align-items: flex-start; /* Align elements at the start vertically */
+        }
+
+        .col-lg-4 {
+            flex: 1; /* Flex take equal space */
+        }
+
+        .col-lg-8 {
+            flex: 2; /* Flex take more space */
+            display: flex; /* Use flex layout */
+            flex-direction: column; /* Align items vertically */
+            padding-left: 20px; /* Add consistent left padding for this column */
+        }
+
+        .skills {
+            background: url('https://tse2.mm.bing.net/th?id=OIP.J5WUPGRnSPNyDt0vENnjrwHaDn&pid=Api&P=0&h=180') no-repeat center center/cover; /* Skills Section Background Image */
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            color: #fff;
+        }
+
+        .resume {
+            background: url('https://wallpaperaccess.com/full/5652030.jpg') no-repeat center center/cover; /* Resume Section Background Image */
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            color: #fff;
+        }
+
+        .services {
+            background: url('https://tse3.mm.bing.net/th?id=OIP.c6xqydmmrdGdOOiD939zKQHaDG&pid=Api&P=0&h=180') no-repeat center center/cover; /* Services Section Background Image */
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            color: #fff;
+        }
+
+        .contact {
+            background: url('https://wallpapers.com/images/hd/glowing-contact-us-logo-qx58564q7a51etk6.jpg') no-repeat center center/cover; /* Contact Section Background Image */
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            color: #fff;
+        }
+
+        .progress {
+            margin: 15px 0;
+        }
+
+        .progress-bar-wrap {
+            background: #e0e0e0;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 20px;
+            transition: width 0.5s ease-in-out;
+        }
+
+        .contact .btn {
+            background: #007bff; /* Blue Call to Action button */
+            color: #ffffff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .contact .btn:hover {
+            background: #0056b3; /* Darker blue on hover */
+        }
+
+        footer {
+            background: #343a40; /* Footer background color */
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .copyright {
+            margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            nav ul li {
+                display: block;
+                margin: 10px 0;
+            }
+
+            .content {
+                flex-direction: column; /* Stack elements vertically on smaller screens */
+                align-items: center; /* Center them horizontally */
+                padding-left: 0; /* Remove left padding for small screens */
+            }
+
+            .col-lg-4, .col-lg-8 {
+                width: 100%; /* Make width 100% for mobile devices */
+                padding-left: 0; /* Remove left padding for small devices */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="#hero"><i class="fas fa-home"></i>Home</a></li>
+                <li><a href="#about"><i class="fas fa-user"></i>About</a></li>
+                <li><a href="#resume"><i class="fas fa-file-alt"></i>Resume</a></li>
+                <li><a href="#services"><i class="fas fa-cog"></i>Services</a></li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i>Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <div class="container">
+            <h1>Thati Sesharao</h1>
+            <p><span class="typed" data-typed-items="Web Developer, Data Analyst, Python Developer"></span></p>
+            <div class="social-links">
+                <a href="https://www.instagram.com/lakshm_ireddy?igsh=NHJxbnd3ZnZ1Z3I4" class="instagram">📷</a>
+                <a href="https://www.instagram.com/lakshm_ireddy?igsh=NHJxbnd3ZnZ1Z3I4" class="linkedin">🔗</a>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <section id="about" class="about">
+            <div class="container">
+                <h2>About</h2>
+                <p>Seeking a challenging role at a distinguished organization to leverage skills, training, and strengths to contribute to organizational growth while embracing opportunities for professional and personal development.</p>
+                <div class="content">
+                    <div class="col-lg-4">
+                        <img src=" C:\Users\hari7\OneDrive\Desktop\231fj01036\sesharao.jpeg" alt="Sesha rao" style="width: 80%; max-width: 250px; border-radius: 8px; margin-right: 20px;"> 
+                    </div>
+                    <div class="col-lg-8">
+                        <h3 style="text-align: left;">Software Engineer</h3> <!-- Left-aligned Header -->
+                        <p class="font-italic" style="text-align: left;">Aspiring Software Engineer passionate about Web Development and Data Analytics.</p> <!-- Left-aligned Text -->
+                        <ul style="margin-top: 20px; text-align: left;"> <!-- Left-aligned List -->
+                            <li><strong>Birthday:</strong> 14-may-2004</li>
+                            <li><strong>Phone:</strong> 91-7569749917</li>
+                            <li><strong>City:</strong> Vejandla, Andhra Pradesh-522213</li>
+                            <li><strong>Degree:</strong> BCA (2026 Batch)</li>
+                            <li><strong>Email:</strong> <a href="mailto:sesharao123@gmail.com">sesharao123@gmail.com</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="skills">
+            <div class="container">
+                <h2>Skills</h2>
+                <p>I have been working in the below mentioned skills for over 2 months and I am still Learning More and More.</p>
+                <div class="row skills-content">
+                    <div class="col-lg-6">
+                        <div class="progress">
+                            <span class="skill">HTML <i class="val">80%</i></span>
+                            <div class="progress-bar-wrap">
+                                <div class="progress-bar" style="width: 80%; background: #6a11cb;"></div> 
+                            </div>
+                        </div>
+                        <div class="progress">
+                            <span class="skill">CSS <i class="val">80%</i></span>
+                            <div class="progress-bar-wrap">
+                                <div class="progress-bar" style="width: 80%; background: #ff7e5f;"></div> 
+                            </div>
+                        </div>
+                        <div class="progress">
+                            <span class="skill">JavaScript <i class="val">60%</i></span>
+                            <div class="progress-bar-wrap">
+                                <div class="progress-bar" style="width: 60%; background: #2575fc;"></div> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="progress">
+                            <span class="skill">Python <i class="val">90%</i></span>
+                            <div class="progress-bar-wrap">
+                                <div class="progress-bar" style="width: 90%; background: #6a11cb;"></div> 
+                            </div>
+                        </div>
+                        <div class="progress">
+                            <span class="skill">SQL <i class="val">85%</i></span>
+                            <div class="progress-bar-wrap">
+                                <div class="progress-bar" style="width: 85%; background: #ff7e5f;"></div> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="resume" class="resume">
+            <div class="container">
+                <h2>Resume</h2>
+                <h3>Summary</h3>
+                <ul>
+                    <li><strong>Sesha Rao</strong></li>
+                    <li>Vejandla, Andhra Pradesh-522213, India</li>
+                    <li>91-7569749917</li>
+                    <li>Email: <a href="mailto:sesharao123@gmail.com">sesharao123@gmail.com</a></li>
+                </ul>
+
+                <h3>Education</h3>
+                <ul>
+                    <li><strong>Bachelor of Computer Application</strong> (2023-2026) - Vignan's Foundation for Science, Technology & Research (Deemed to be University), Guntur - CGPA:7.3 </li>
+                </ul>
+
+                <h3>Projects</h3>
+                <ul>
+                    <li>Online Tours And Travels - Technologies: HTML, CSS, JavaScript</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="services" class="services">
+            <div class="container">
+                <h2>Services</h2>
+                <p>I have experience in Web Development & Data Analysis.</p>
+                <ul>
+                    <li>Front End Development - HTML5, CSS3, JavaScript</li>
+                    <li>Data Analyst & Software Developer - Python</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2>Contact</h2>
+                <ul>
+                    <li><strong>Location:</strong> Vejandla, Andhra Pradesh, India</li>
+                    <li><strong>Email:</strong> <a href="mailto:sesharao123@gmail.com">sesharao123@gmail.com</a></li>
+                    <li><strong>Phone:</strong> +91 7569749917</li>
+                </ul>
+                <a href="mailto:sesharao123@gmail.com" class="btn">Send Message</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <h3>Sesha rao</h3>
+            <p>Let’s Learn, Earn With Technology.</p>
+            <div class="social-links">
+                <a href="https://www.instagram.com/lakshm_ireddy?igsh=NHJxbnd3ZnZ1Z3I4" class="instagram">📷 Instagram</a>
+                <a href="https://www.instagram.com/lakshm_ireddy?igsh=NHJxbnd3ZnZ1Z3I4" class="linkedin">🔗 LinkedIn</a>
+            </div>
+            <div class="copyright">
+                © Copyright <strong><span>sesharao</span></strong>. All Rights Reserved
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
